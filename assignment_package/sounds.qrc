@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>sounds/bubbles.wav</file>
+        <file>sounds/thunk.wav</file>
+    </qresource>
+</RCC>
