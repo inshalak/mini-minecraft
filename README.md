@@ -32,6 +32,12 @@ I used Qt's multithreading support for this feature. To implement multithreading
 
 ## Milestone 3
 
+### Additional Biomes (Desert, Swamp, Plateau ) + Smooth interpolation based on temperature + (Kinda) Procedural Sky ( Day-Night Cycle) + Procedural Placement of Trees + Cactus + Water Displacement 
+I experimented a lot with different noise functions to get the biomes to work right. The bad-lands plateau was one of the hardest to implement but it was fun playing around with diferrent textures and element - using ShaderToy to test different toolbox functions I could use to make it work. I implemented temperature and humidity based interpolation in the biomes as well. 
+
+I also implemented the procedural sky from scratch, to create my own sun-like structure. To ensure the water displacement worked well, I played around with different noise functions that allowed me to mimic a wave like effect on the surface, and also interpolated colour so that when the wave surfaced outside of the water it appeared as an opaque blue colour. 
+
+
 ### Redstone (Jonah)
 To implement a redstone system, I added a new "RedstoneItem" abstract class that represents any redstone block. The "RedstoneItem" class holds pointers to the other RedstoneItems that it is adjacent to, as well as an update() function, in which the RedstoneItem updates it's current state based on the external redstone state. The update() function is implemented using a recursive algorithm similar to a graph traversal, which allows for signals to travel down wires. The terrain class has two collections, one that owns unique pointers to each redstone item, and one that holds every redstone item which is a "source". To update the state of the redstone blocks, the terrain object calls update() on all of its source blocks.
 
@@ -40,6 +46,3 @@ To implement Inventory, I added a new GUI that pops up and down with the button 
 For sound, it was a little difficult at first because the names of the class used has changed to QSoundEffect as opposed to QSound and it took a while for me to figure that out. I added two sounds, one for underwater - bubbles and then a thunking noise for when I added and removed blocks. However, recording the video was tough because it was hard for the sounds to sync up on video even though they did in real life. 
 For partial crafting, I started implementing the GUI for crafting, including the four blocks that the user can choose from and having them populate on PushButtons. Finding out how to use the menu of buttons was a little difficult as there isn't a default dropdown for QT. With more time, I would expand the capabilities of inventory and crafting for more items and so more items could be crafted.
 
-### Additional Biomes (Desert, Swamp, Plateau ) + Smooth interpolation based on temperature + (Kinda) Procedural Sky ( Day-Night Cycle) + Procedural Placement of Trees + Cactus + Water Displacement 
-
-I experiemnted a lot with different noise functions to get the biomes to work right. The badlands plateau was one of the hardest to implement but it was fun playing around with differrent textures and elements. I also implemented procedural sky from scratch, to create my own sun-like structure. To ensure the water displacement worked well, I played around with different noise functions that allowed me to mimic a wave like effect on the surface, and also interpolated colour so that when the wave surfaced outside of the water it appeared as an opaque blue colour. 
